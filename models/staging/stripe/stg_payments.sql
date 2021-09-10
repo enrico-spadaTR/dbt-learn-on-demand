@@ -1,0 +1,13 @@
+WITH PAYMENT AS (
+    SELECT  
+        ID,
+        ORDERID AS ORDER_ID,
+        PAYMENTMETHOD AS PAYMENT_METHOD,
+        STATUS,
+        AMOUNT,
+        CREATED,
+        _BATCHED_AT
+    FROM    RAW.STRIPE.PAYMENT
+)
+SELECT  *
+FROM    PAYMENT
