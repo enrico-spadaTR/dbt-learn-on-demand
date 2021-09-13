@@ -9,7 +9,7 @@ WITH PAYMENT AS (
         AMOUNT / 100 AS AMOUNT,
         CREATED,
         _BATCHED_AT
-    FROM    RAW.STRIPE.PAYMENT
+    FROM    {{source("stripe", "payment")}}
 )
 SELECT  *
 FROM    PAYMENT
